@@ -1,11 +1,8 @@
 import openpyxl
 
-with open('1.txt') as f:
-    data_create = f.readline()
-
 
 def get_data_xls():
-    book = openpyxl.open('out1.xlsx', read_only=True)
+    book = openpyxl.open('out.xlsx', read_only=True)
     sheet = book.active
 
 
