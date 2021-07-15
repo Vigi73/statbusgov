@@ -10,10 +10,33 @@ footer {
 
     text-align: center;
     font-size: small;
-    font-family: "Candara";
+
 }
 caption {
     font-weight: bold;
     font-size: small;
+}
+
+.imgr {
+    position:absolute;
+        left:40%;
+        top:50%;
+
+}
+
+td {
+    position: relative;
+    font-size: 14px;
+    padding: 100px;
+    width: 20%;
+    /*text-align: center;*/
+    vertical-align: top;
+
+}
+
+.bb {
+    font-weight: bold;
+    color: #1c1c1d;
+    font-style: italic;
 }
 
