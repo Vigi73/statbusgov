@@ -5,6 +5,9 @@ h1 {
     border-radius: 5px;
 }
 
+th {
+text-align: center;
+}
 
 footer {
 
