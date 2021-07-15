@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    background-color: #1c2b1c;
+    color: #e6eaea;
+}
+
+
+footer {
+
+    text-align: center;
+    font-size: small;
+    font-family: "Candara";
+}
+caption {
+    font-weight: bold;
+    font-size: small;
+}
+

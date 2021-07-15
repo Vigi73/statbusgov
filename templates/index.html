@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+
+
+</head>
+<body>
+<h1>
+    <img src="{{ url_for('static', filename='img/logo.png')}}" alt="logo">
+    СТАТИСТИКА РАЗМЕЩЕНИЯ ИНФОРМАЦИИ НА bus.gov.ru в {{year}} ГОДУ.
+</h1>
+
+<div class="container-xxl">
+    <table class="table table-bordered table-striped caption-top">
+        <caption>Выгрузка от: {{create}}</caption>
+
+
+        <tr class="table-primary">
+            <th style="text-align: center">№</th>
+            <th style="text-align: center">ПОЛНОЕ НАИМЕНОВАНИЕ УЧРЕЖДЕНИЯ</th>
+            <th style="text-align: center">ИНН</th>
+            <th style="text-align: center">ГЗ</th>
+            <th style="text-align: center">ПЛАН ФХД</th>
+            <th style="text-align: center">ЦЕЛЕВЫЕ СРЕДСТВА</th>
+            <th style="text-align: center">ПОКАЗАТЕЛИ БЮДЖЕТНОЙ СМЕТЫ</th>
+            <th style="text-align: center">ОТЧЕТ О РЕЗУЛЬТАТАХ ДЕЯТЕЛЬНОСТИ</th>
+            <th style="text-align: center">БО ф. 0503121</th>
+            <th style="text-align: center">БО ф. 0503127</th>
+            <th style="text-align: center">БО ф. 0503130</th>
+            <th style="text-align: center">БО ф. 0503721</th>
+            <th style="text-align: center">БО ф. 0503730</th>
+            <th style="text-align: center">БО ф. 0503737</th>
+
+        </tr>
+        {% for date in data %}
+        <tr>
+            <td style="text-align: center">{{ loop.index }}</td>
+            <td>{{ date.name }}</td>
+            <td style="text-align: center">{{date.inn}}</td>
+
+            <td style="text-align: center">
+                {% if date.gz == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.gz == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.gz == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.pfhd == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.pfhd == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.pfhd == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.intmoney == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.intmoney == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.intmoney == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.bsmeta == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.bsmeta == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.bsmeta == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.otchetd == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.otchetd == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.otchetd == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.bof0503121 == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503121 == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503121 == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.bof0503127 == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503127 == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503127 == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.bof0503130 == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503130 == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503130 == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.bof0503721 == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503721 == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503721 == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.bof0503730 == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503730 == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503730 == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+            <td style="text-align: center">
+                {% if date.bof0503737 == 'Да' %}
+                    <img src="{{ url_for('static', filename='img/true.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503737 == 'Нет' %}
+                    <img src="{{ url_for('static', filename='img/false.png')}}" alt="">
+                {% endif %}
+                {% if date.bof0503737 == '-' %}
+                    <img src="{{ url_for('static', filename='img/_.png')}}" alt="">
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <footer>
+        &copy; Vigi-Soft 2021
+    </footer>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+</body>
+</html>
