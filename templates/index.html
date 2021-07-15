@@ -24,8 +24,8 @@
         <tr class="table-info">
             <th style="text-align: center">№</th>
             <th style="text-align: center">ПОЛНОЕ НАИМЕНОВАНИЕ УЧРЕЖДЕНИЯ</th>
-            <th style="text-align: center">ИНН</th>
-            <th style="text-align: center">ГЗ</th>
+<!--            <th style="text-align: center">ИНН</th>-->
+            <th style="text-align: center">ГОС. ЗАДАНИЕ</th>
             <th style="text-align: center">ПЛАН ФХД</th>
             <th style="text-align: center">ЦЕЛЕВЫЕ СРЕДСТВА</th>
             <th style="text-align: center">ПОКАЗАТЕЛИ БЮДЖЕТНОЙ СМЕТЫ</th>
@@ -42,7 +42,7 @@
         <tr>
             <td style="text-align: center">{{ loop.index }}</td>
             <td class="bb">{{ date.name }}</td>
-            <td style="text-align: center">{{date.inn}}</td>
+<!--            <td class="inn" >{{date.inn}}</td>-->
 
             <td>
                 {% if date.gz == 'Да' %}
