@@ -1,8 +1,13 @@
 h1 {
     text-align: center;
     background-color: #1c2b1c;
-    color: #e6eaea;
+   color: #e6eaea;
     border-radius: 5px;
+}
+span{
+    color: #8b8bff;
+    text-decoration-line: underline;
+
 }
 
 th {
