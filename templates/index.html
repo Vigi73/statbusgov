@@ -36,137 +36,172 @@
             <th >БО ф. 0503721</th>
             <th >БО ф. 0503730</th>
             <th> БО ф. 0503737</th>
+            <th> ПРОЦЕНТ РАЗМЕЩЕНИЯ </th>
 
         </tr>
+
+
         {% for date in data %}
-        <tr>
-            <td style="text-align: center">{{ loop.index }}</td>
-            <td class="bb">{{ date.name }}</td>
-<!--            <td class="inn" >{{date.inn}}</td>-->
+            {% set x = 0 %}
+            <tr>
+                <td style="text-align: center">{{ loop.index }}</td>
+                <td class="bb">{{ date.name }}</td>
+    <!--            <td class="inn" >{{date.inn}}</td>-->
 
-            <td>
-                {% if date.gz == 'Да' %}
-                    <img  class="imgr"  src="{{ url_for('static', filename='img/true.png')}}" width="16"  alt="" >
-                {% endif %}
-                {% if date.gz == 'Нет' %}
-                    <img  class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.gz == '-' %}
-                    <img class="imgr"  src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.pfhd == 'Да' %}
-                    <img class="imgr"  src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.pfhd == 'Нет' %}
-                    <img class="imgr"  src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.pfhd == '-' %}
-                    <img  class="imgr"  src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.intmoney == 'Да' %}
-                    <img class="imgr"  src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.intmoney == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.intmoney == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.bsmeta == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bsmeta == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bsmeta == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}"width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.otchetd == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.otchetd == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.otchetd == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.bof0503121 == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503121 == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503121 == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.bof0503127 == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503127 == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503127 == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.bof0503130 == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503130 == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503130 == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.bof0503721 == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503721 == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503721 == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.bof0503730 == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503730 == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503730 == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
-            <td>
-                {% if date.bof0503737 == 'Да' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503737 == 'Нет' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
-                {% endif %}
-                {% if date.bof0503737 == '-' %}
-                    <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
-                {% endif %}
-            </td>
+                <td>
+                    {% if date.gz == 'Да' %}
+                        <img  class="imgr"  src="{{ url_for('static', filename='img/true.png')}}" width="16"  alt="" >
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.gz == 'Нет' %}
+                        <img  class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.gz == '-' %}
+                        <img class="imgr"  src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.pfhd == 'Да' %}
+                        <img class="imgr"  src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.pfhd == 'Нет' %}
+                        <img class="imgr"  src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.pfhd == '-' %}
+                        <img  class="imgr"  src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.intmoney == 'Да' %}
+                        <img class="imgr"  src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.intmoney == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.intmoney == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.bsmeta == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.bsmeta == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.bsmeta == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}"width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.otchetd == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.otchetd == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.otchetd == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.bof0503121 == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.bof0503121 == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.bof0503121 == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.bof0503127 == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.bof0503127 == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.bof0503127 == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.bof0503130 == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.bof0503130 == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.bof0503130 == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.bof0503721 == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.bof0503721 == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.bof0503721 == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.bof0503730 == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.bof0503730 == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.bof0503730 == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
+                    {% if date.bof0503737 == 'Да' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/true.png')}}" width="16" alt="">
+                        {% set x = x + 1 %}
+                    {% endif %}
+                    {% if date.bof0503737 == 'Нет' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/false.png')}}" width="16" alt="">
+                    {% endif %}
+                    {% if date.bof0503737 == '-' %}
+                        <img class="imgr" src="{{ url_for('static', filename='img/_.png')}}" width="16" alt="">
+                    {% endif %}
+                </td>
+                <td>
 
-        </tr>
+                    {% if loop.index < 12 %}
+                        {% set result = ((x/7)*100)|int %}
+                        {%  if result < 100 %}
+                            <div class="procent" style="color: red">{{ result }}%</div>
+                            {% else %}
+                            <div class="procent" style="color: darkgreen">{{ result }}%</div>
+                        {% endif %}
+                    {% else %}
+                        {% set result = ((x/6)*100)|int %}
+                        {%  if result < 100 %}
+                            <div class="procent" style="color: red">{{ result }}%</div>
+                            {% else %}
+                            <div class="procent" style="color: darkgreen">{{ result }}%</div>
+                        {% endif %}
+                    {% endif %}
+
+                </td>
+
+            </tr>
+
         {% endfor %}
     </table>
 

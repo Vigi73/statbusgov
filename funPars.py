@@ -27,5 +27,6 @@ def get_data_xls():
                      'bof0503721':sheet[row][29].value,
                      'bof0503730':sheet[row][30].value,
                      'bof0503737':sheet[row][31].value
-                     })
+                   })
     return data
+
