@@ -6,7 +6,6 @@ app = Flask(__name__)
 data = get_data_xls()
 
 
-
 @app.route('/')
 def index():
     with open('1.txt') as f:
